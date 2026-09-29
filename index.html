@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gowri Ventures, Bengaluru — Asian Paints, plywood, laminates and rafters for your home and business. Contact us for product enquiries and quotations.">
+  <title>Gowri Ventures | Building Materials, Bengaluru</title>
+  <style>
+    :root {
+      --green: #174d3a;
+      --green-light: #24684d;
+      --gold: #d8a84e;
+      --cream: #f7f5ef;
+      --ink: #202923;
+      --muted: #667168;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 7%;
+      background: white;
+      border-bottom: 1px solid #e8e8e1;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -1px;
+    }
+
+    .brand span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--green-light); }
+
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      border: 0;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: #17271e;
+    }
+
+    .button-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .hero {
+      background: var(--cream);
+      padding: 85px 7%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .eyebrow {
+      color: var(--green-light);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 15px 0 22px;
+    }
+
+    h1 span { color: var(--green-light); }
+
+    .hero p {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-art {
+      min-height: 330px;
+      border-radius: 12px;
+      background: var(--green);
+      color: white;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 35px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      top: -65px;
+      right: -40px;
+    }
+
+    .hero-art .big {
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .hero-art p {
+      color: #e2ebe4;
+      font-size: 14px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    section { padding: 75px 7%; }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 10px 0;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      border: 1px solid #e7e8e1;
+      border-radius: 9px;
+      padding: 25px 22px;
+      background: white;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.07);
+    }
+
+    .product-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .product h3 { margin: 0 0 10px; font-size: 19px; }
+
+    .product p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 67px;
+    }
+
+    .product a {
+      color: var(--green-light);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .about {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about h2, .contact h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 12px 0 20px;
+    }
+
+    .about p { color: var(--muted); }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .benefit {
+      padding: 16px;
+      background: white;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+    }
+
+    .contact-info p { color: var(--muted); }
+
+    .contact-card {
+      background: var(--cream);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .contact-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 14px 0 6px;
+    }
+
+    .contact-card input,
+    .contact-card select,
+    .contact-card textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d9ddd6;
+      border-radius: 5px;
+      background: white;
+      font: inherit;
+    }
+
+    .contact-card textarea { min-height: 90px; resize: vertical; }
+
+    .contact-card .button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #14382c;
+      color: white;
+      padding: 30px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    footer p { margin: 4px 0; color: #d9e4dc; }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 10;
+      background: #168c53;
+      color: white;
+      border-radius: 30px;
+      padding: 13px 19px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(0,0,0,.18);
+    }
+
+    @media (max-width: 850px) {
+      header { padding: 17px 5%; flex-wrap: wrap; }
+      nav { gap: 14px; }
+      header > .button { display: none; }
+      .hero, .about, .contact { grid-template-columns: 1fr; }
+      .hero { padding: 55px 6%; gap: 30px; }
+      section { padding: 55px 6%; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .brand { font-size: 22px; }
+      nav { width: 100%; gap: 12px 18px; font-size: 13px; }
+      .products { grid-template-columns: 1fr; }
+      .product p { min-height: auto; }
+      .benefits { grid-template-columns: 1fr; }
+      .hero-art { min-height: 240px; }
+      .whatsapp { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Replace the placeholder contact details before publishing. -->
+  <div class="topbar">
+    Building materials for homes, offices and projects in Bengaluru
+  </div>
+
+  <header>
+    <a class="brand" href="#home">GOWRI <span>VENTURES</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="button button-green" href="#contact">Get a Quote</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">Your building materials partner</div>
+        <h1>Build better.<br><span>Choose quality.</span></h1>
+        <p>
+          Discover paints, plywood, laminates and rafters with
+          Gowri Ventures in Bengaluru. Tell us what your project
+          needs and request a quotation from our team.
+        </p>
+        <a class="button button-green" href="#products">Explore Products</a>
+        <a class="button button-gold" href="#contact">Request a Quote</a>
+      </div>
+      <div class="hero-art">
+        <div class="big">Materials that<br>make a difference.</div>
+        <p>For your home, renovation or next project.</p>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="section-heading">
+        <div class="eyebrow">What we offer</div>
+        <h2>Products for every project</h2>
+        <p>
+          Explore our key product categories and contact us
+          for product details, availability and pricing.
+        </p>
+      </div>
+
+      <div class="products">
+        <article class="product">
+          <div class="product-icon">🎨</div>
+          <h3>Asian Paints</h3>
+          <p>Paints and colour solutions for interior and exterior spaces.</p>
+          <a href="#contact" data-product="Asian Paints">Enquire now →</a>
+        </article>
+
+        <article class="product">
+          <div class="product-icon">🪵</div>
+          <h3>Plywood</h3>
+          <p>Plywood options for furniture, cabinetry and interiors.</p>
+          <a href="#contact" data-product="Plywood">Enquire now →</a>
+        </article>
+
+        <article class="product">
+          <div class="product-icon">▤</div>
+          <h3>Laminates</h3>
+          <p>Decorative surface finishes for furniture and interior spaces.</p>
+          <a href="#contact" data-product="Laminates">Enquire now →</a>
+        </article>
+
+        <article class="product">
+          <div class="product-icon">🏠</div>
+          <h3>Rafters</h3>
+          <p>Building materials for roofing and construction requirements.</p>
+          <a href="#contact" data-product="Rafters">Enquire now →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <div class="eyebrow">About Gowri Ventures</div>
+        <h2>Helping you source materials for your next project.</h2>
+        <p>
+          Gowri Ventures supplies building and interior materials
+          in Bengaluru. Whether you're refreshing a room, planning
+          furniture or sourcing materials for a construction project,
+          contact us to discuss your requirements.
+        </p>
+        <a class="button button-green" href="#contact">Talk to Our Team</a>
+      </div>
+      <div>
+        <div class="benefits">
+          <div class="benefit">✓ Multiple product categories</div>
+          <div class="benefit">✓ Enquiry-based assistance</div>
+          <div class="benefit">✓ Quotation requests</div>
+          <div class="benefit">✓ Bengaluru-based business</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-info">
+        <div class="eyebrow">Let's get started</div>
+        <h2>Tell us what your project needs.</h2>
+        <p>
+          Looking for paints, plywood, laminates or rafters?
+          Send your requirements and we'll help you with your enquiry.
+        </p>
+        <p><strong>Business:</strong> Gowri Ventures</p>
+        <p><strong>Location:</strong> Bengaluru, Karnataka</p>
+        <p><strong>Phone:</strong> Add your business number before publishing</p>
+        <p><strong>Email:</strong> Add your business email before publishing</p>
+      </div>
+
+      <form class="contact-card" id="quoteForm">
+        <h3>Request a quotation</h3>
+        <p>Fill in your details to prepare an enquiry on WhatsApp.</p>
+
+        <label for="customerName">Your name</label>
+        <input id="customerName" name="name" required placeholder="Enter your name">
+
+        <label for="customerPhone">Your phone number</label>
+        <input id="customerPhone" name="phone" required type="tel" placeholder="Enter your phone number">
+
+        <label for="product">Product required</label>
+        <select id="product" name="product" required>
+          <option value="">Select a product</option>
+          <option>Asian Paints</option>
+          <option>Plywood</option>
+          <option>Laminates</option>
+          <option>Rafters</option>
+          <option>Multiple products</option>
+        </select>
+
+        <label for="requirements">Project requirements</label>
+        <textarea id="requirements" name="requirements" placeholder="Product, quantity, dimensions or other details"></textarea>
+
+        <button class="button button-green" type="submit">Send Enquiry on WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>GOWRI VENTURES</strong>
+      <p>Building materials and interior products · Bengaluru</p>
+    </div>
+    <p>© <span id="year"></span> Gowri Ventures. All rights reserved.</p>
+  </footer>
+
+  <a class="whatsapp" id="whatsappLink" href="#contact">WhatsApp Enquiry ↗</a>
+
+  <script>
+    // IMPORTANT: Replace this with your WhatsApp number,
+    // including India's country code 91, without + or spaces.
+    const BUSINESS_WHATSAPP = "91XXXXXXXXXX";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("[data-product]").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("product").value = link.dataset.product;
+      });
+    });
+
+    document.getElementById("whatsappLink").addEventListener("click", function(event) {
+      if (BUSINESS_WHATSAPP.includes("X")) {
+        event.preventDefault();
+        alert("Please add your business WhatsApp number to the website code before using this button.");
+      } else {
+        this.href = "https://wa.me/" + BUSINESS_WHATSAPP;
+      }
+    });
+
+    document.getElementById("quoteForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (BUSINESS_WHATSAPP.includes("X")) {
+        alert("The website form is ready. Your business WhatsApp number must be added before enquiries can be sent.");
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const product = document.getElementById("product").value;
+      const requirements = document.getElementById("requirements").value.trim();
+
+      const message =
+        "Hello Gowri Ventures, I would like a quotation." +
+        "\nName: " + name +
+        "\nPhone: " + phone +
+        "\nProduct: " + product +
+        "\nRequirements: " + (requirements || "Please contact me.");
+
+      window.open(
+        "https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(message),
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+  </script>
+</body>
+</html>
